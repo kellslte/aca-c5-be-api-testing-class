@@ -1,0 +1,35 @@
+// Databases
+1. Relational (SQL Databases) -> Structured Query Language
+2. Non-Relational (NoSQL Databases) -> Not Only Structured Query Language
+// Method of Data Persistence
+Relational (SQL) -> Tables, Rows, Columns
+Non-Relational (NoSQL) -> Documents
+
+// Types of Databases
+1. Relational -> MySQL, PostgresQL, MicrosoftServerSQL etc.
+2. Non-Relational -> MongoDB, CouchDB, IndexDB, CockroachDB, DockDB etc.
+
+// MongoDB Basics
+Stores data as BSON
+Typical MOngoDB records are called collections.
+Our typical user table in SQL will be structured like this
+{
+"name": "Mercy",
+"username": "mercy",
+"gender": "female",
+"hobbies": ["reading motivational books"]
+}
+For a No-SQL database for instance we could have the following
+{
+"name": "Mercy",
+"username": "mercy",
+"gender": "female",
+"hobbies": ["reading motivational books"]
+}
+
+{
+"name": "Uche",
+"username": "kingdave",
+"gender": "male",
+"instruments_played": ["keyboard"]
+}
