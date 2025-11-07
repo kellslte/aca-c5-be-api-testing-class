@@ -1,10 +1,12 @@
 import { server } from "./app.setup.js";
 import { initialiseDatabaseConnection } from "./common/db.js";
+import {getOrThrowEnvKey, validateConfig} from "./config/config.js";
 
 async function bootstrap() {
     try{
+        validateConfig();
         await initialiseDatabaseConnection().then(() => {
-            server.listen(8000, () => {
+            server.listen(getOrThrowEnvKey('PORT'), () => {
                 console.info(`Server listening on port ${server.address().port}`);
             });
         });
@@ -15,6 +17,4 @@ async function bootstrap() {
     }
 }
 
-bootstrap().catch((error) => {
-    console.error(error);
-});
+bootstrap()

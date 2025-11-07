@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import {getOrThrowEnvKey} from "../config/config.js";
 
-const uri = "mongodb://127.0.0.1:27017/awesome_users_collections";
+const uri = getOrThrowEnvKey('MONGODB_URI');
 
 async function initialiseDatabaseConnection() {
     try {
