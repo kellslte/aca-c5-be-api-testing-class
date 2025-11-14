@@ -30,6 +30,14 @@ app.use(responseInterceptor);
 // Application routing configuration
 // Add your routes here
 app.use('/api/v1', appRouter);
+// Add Health Check Endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Application is running",
+        timestamp: new Date().toISOString()
+    })
+})
 // Middleware to list available routes
 expressListRoutes(appRouter);
 
